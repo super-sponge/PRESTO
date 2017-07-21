@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!--
+# -*- coding: utf-8 -*-
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+-->
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+  <property>
+    <name>connectors.to.add</name>
+    <value>{}</value>
+    <description>
+        此属性添加连接器. 格式为 {'connector1':
+        ['key1=value1', 'key2=value2'..], 'connector2' :['key1=value1',
+        'key2=value2'..]..} 注意：每个值必须加上单引号，此案例会创建connector1.properties,
+        connector2.properties 配置属性。如果不想加如任何连接器，配置为{}, 对于删除连接器，请
+        使用connectors.to.remove参数
+    </description>
+  </property>
+  <property>
+    <name>connectors.to.delete</name>
+    <value>[]</value>
+    <description>
+        此属性删除连接器，格式为
+        ['connector1', 'connector2', 'connector3', ...]. 注意：每个值必须加上单引号
+        此案例会删除 connector1.properties, connector2.properties 和 connector3.properties 如果
+        不删除连接器，请请设置为[]
+    </description>
+  </property>
+</configuration>

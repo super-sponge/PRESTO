@@ -1,0 +1,37 @@
+{
+  "name": "default",
+  "description": "默认快速链接配置",
+  "configuration": {
+    "protocol": {
+      "type":"HTTP_ONLY"
+    },
+
+    "links": [
+      {
+        "name": "presto_ui_server",
+        "label": "Presto coordinator",
+        "requires_user_name": "false",
+        "component_name": "PRESTO_COORDINATOR",
+        "url":"%@://%@:%@",
+        "port": {
+          "http_property": "port",
+          "http_default_port": "8285",
+          "https_property": "port",
+          "https_default_port": "8285",
+          "regex": "^(\\d+)$",
+          "site": "presto-coordinator-ini"
+        },
+        "protocol":{
+          "type":"https",
+          "checks":[
+            {
+              "property":"protocol",
+              "desired":"https",
+              "site":"presto-coordinator-ini"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

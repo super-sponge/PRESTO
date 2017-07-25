@@ -25,6 +25,7 @@
 -XX:+ExplicitGCInvokesConcurrent
 -XX:+HeapDumpOnOutOfMemoryError
 -XX:OnOutOfMemoryError=kill -9 %p</value>
+      <display-name>启动参数</display-name>
     <description>
         启动java虚拟机的参数列表，每个参数必须一行。
     </description>

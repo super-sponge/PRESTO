@@ -38,7 +38,7 @@ logging.basicConfig(stream=sys.stdout)
 _LOGGER = logging.getLogger(__name__)
 
 def smoketest_presto(client, all_hosts):
-    ensure_nodes_are_up(client, all_hosts)
+    # ensure_nodes_are_up(client, all_hosts)
     ensure_catalogs_are_available(client)
     client.execute_query('select * from nation', schema='sf1', catalog='tpch')
     rows = client.get_rows()

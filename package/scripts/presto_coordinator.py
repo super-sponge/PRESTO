@@ -34,20 +34,11 @@ class Coordinator(Script):
         Execute('{0} stop'.format(daemon_control_script))
 
     def start(self, env):
-        from params import daemon_control_script, config_properties, \
-            host_info
+        from params import daemon_control_script
+        import time
         self.configure(env)
         Execute('{0} start'.format(daemon_control_script))
-        if 'presto_worker_hosts' in host_info.keys():
-            all_hosts = host_info['presto_worker_hosts'] + \
-                host_info['presto_coordinator_hosts']
-        else:
-            all_hosts = host_info['presto_coordinator_hosts']
-        # smoketest_presto(
-        #     PrestoClient('localhost','root',
-        #                  config_properties['http-server.http.port']),
-        #     all_hosts)
-
+        time.sleep(5)
     def status(self, env):
         check_process_status('/var/lib/presto/var/run/launcher.pid')
 

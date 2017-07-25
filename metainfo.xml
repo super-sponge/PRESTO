@@ -36,7 +36,6 @@
                         <timeout>1200</timeout>
                     </commandScript>
                 </component>
-
                 <component>
                     <name>PRESTO_WORKER</name>
                     <displayName>Presto worker</displayName>
@@ -68,7 +67,11 @@
                     </configFiles>
                 </component>
             </components>
-
+            <!--commandScript>
+                <script>scripts/service_check.py</script>
+                <scriptType>PYTHON</scriptType>
+                <timeout>300</timeout>
+            </commandScript-->
             <configuration-dependencies>
                 <config-type>node.properties</config-type>
                 <config-type>config.properties</config-type>

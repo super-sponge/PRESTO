@@ -14,6 +14,7 @@
 # limitations under the License.
 
 from resource_management.libraries.script.script import Script
+from urlparse import urlparse
 
 # config object that holds the configurations declared in the config xml file
 config = Script.get_config()
@@ -21,6 +22,10 @@ config = Script.get_config()
 node_properties = config['configurations']['node.properties']
 jvm_config = config['configurations']['jvm.config']
 config_properties = config['configurations']['config.properties']
+
+coordinate_master_url = urlparse(config['configurations']['config.properties']['discovery.uri'])
+coordinate_master_host = coordinate_master_url.hostname
+coordinate_master_port = coordinate_master_url.port
 
 connectors_to_add = config['configurations']['connectors.properties']['connectors.to.add']
 connectors_to_delete = config['configurations']['connectors.properties']['connectors.to.delete']

@@ -19,6 +19,7 @@
   <property>
     <name>node-scheduler.include-coordinator</name>
     <value>false</value>
+    <display-name>coordinator 运行work</display-name>
     <description>
       是否运行work节点在coordinator上。对于大型集群，work在coordinator上会影响效率
     </description>
@@ -41,6 +42,7 @@
   <property>
     <name>http-server.http.port</name>
     <value>8285</value>
+    <display-name>presto服务端口</display-name>
     <description>
       指定Presto HTTP 端口
     </description>
@@ -49,6 +51,7 @@
   <property>
     <name>query.max-memory</name>
     <value>10GB</value>
+    <display-name>查询使用最大内存</display-name>
     <description>
       一条查询使用的最大内存
     </description>
@@ -64,6 +67,7 @@
   <property>
     <name>query.max-memory-per-node</name>
     <value>1GB</value>
+    <display-name>查询使用每个节点最大内存</display-name>
     <description>
       一条查询在每个节点上使用的内存
     </description>
@@ -79,6 +83,7 @@
   <property require-input="true">
     <name>discovery.uri</name>
     <value></value>
+    <display-name>presto服务地址</display-name>
     <description>
       presto 查询服务器地址
       例如：http://master.net:8285

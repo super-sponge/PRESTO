@@ -19,6 +19,7 @@
   <property>
     <name>node.environment</name>
     <value>production</value>
+    <display-name>环境</display-name>
     <description>
       presto 的环境名称，所有presto的节点必须拥有同样的环境名称
     </description>
@@ -42,17 +43,25 @@ node.properties.xml
   <property>
     <name>plugin.config-dir</name>
     <value>/etc/presto/catalog</value>
-    <description>
-      连接器配置文件的路径
-    </description>
+    <display-name>连接器存放路径</display-name>
+    <description>连接器配置文件的路径，此路径只能在安装时设定</description>
+    <value-attributes>
+      <type>directory</type>
+      <overridable>false</overridable>
+      <editable-only-at-install>true</editable-only-at-install>
+    </value-attributes>
   </property>
 
   <property>
     <name>plugin.dir</name>
     <value>/usr/lib/presto/lib/plugin</value>
-    <description>
-      插件的路径
-    </description>
+    <display-name>插件包存放路径</display-name>
+    <description>插件包存放路径，此路径只能在安装时设定</description>
+    <value-attributes>
+      <type>directory</type>
+      <overridable>false</overridable>
+      <editable-only-at-install>true</editable-only-at-install>
+    </value-attributes>
   </property>
 
 </configuration>
